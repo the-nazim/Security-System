@@ -1,0 +1,27 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/variants/standard"
+  },
+  {
+    "Sourcefile": "/home/nazim/projects/arduino/build/sketch/arduino.ino.cpp",
+    "Include": "LiquidCrystal.h",
+    "Includepath": "/home/nazim/snap/arduino-cli/60/Arduino/libraries/LiquidCrystal/src"
+  },
+  {
+    "Sourcefile": "/home/nazim/projects/arduino/build/sketch/arduino.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/home/nazim/snap/arduino-cli/60/Arduino/libraries/LiquidCrystal/src/LiquidCrystal.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]

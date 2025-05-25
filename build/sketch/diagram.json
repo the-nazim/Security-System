@@ -1,0 +1,34 @@
+#line 1 "/home/nazim/projects/arduino/diagram.json"
+{
+  "version": 1,
+  "author": "Muhammed Nazim",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 96.6, "left": -67.8, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -130.97, "left": -41.6, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 129.6,
+      "left": 249.05,
+      "rotate": 90,
+      "attrs": { "value": "220000" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:VSS", "uno:GND.1", "green", [ "v0" ] ],
+    [ "lcd1:VDD", "uno:5V", "green", [ "v0" ] ],
+    [ "lcd1:V0", "uno:GND.1", "green", [ "v0" ] ],
+    [ "lcd1:RS", "uno:12", "green", [ "v0" ] ],
+    [ "lcd1:RW", "uno:GND.2", "green", [ "v0" ] ],
+    [ "lcd1:E", "uno:11", "green", [ "v0" ] ],
+    [ "lcd1:D4", "uno:5", "green", [ "v0" ] ],
+    [ "lcd1:D5", "uno:4", "green", [ "v0" ] ],
+    [ "lcd1:D6", "uno:3", "green", [ "v0" ] ],
+    [ "lcd1:D7", "uno:2", "green", [ "v0" ] ],
+    [ "lcd1:K", "uno:GND.3", "green", [ "v0" ] ],
+    [ "lcd1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "uno:5V", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
