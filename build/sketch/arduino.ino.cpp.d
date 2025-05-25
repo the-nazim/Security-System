@@ -11,5 +11,6 @@
  /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/USBAPI.h \
  /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/Arduino.h \
  /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/variants/standard/pins_arduino.h \
+ /home/nazim/projects/arduino/build/sketch/src/security.h \
  /home/nazim/snap/arduino-cli/60/Arduino/libraries/LiquidCrystal/src/LiquidCrystal.h \
  /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/Print.h

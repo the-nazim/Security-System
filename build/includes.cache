@@ -20,6 +20,11 @@
     "Includepath": null
   },
   {
+    "Sourcefile": "/home/nazim/projects/arduino/build/sketch/src/security.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
     "Sourcefile": "/home/nazim/snap/arduino-cli/60/Arduino/libraries/LiquidCrystal/src/LiquidCrystal.cpp",
     "Include": "",
     "Includepath": null

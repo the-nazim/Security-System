@@ -1,24 +1,50 @@
-#include <LiquidCrystal.h>
+#include "src/security.h"
 
-// LCD pins: RS, E, D4, D5, D6, D7
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+SecureLCD secureLCD(12, 11, 5, 4, 3, 2);
+const char* correctPIN = "1234";
+
+int attempts = 0;
 
 void setup() {
-  lcd.begin(16, 2);            // Set LCD to 16 columns and 2 rows
-  lcd.print("Hello, World!");  // Print message
-  delay(1000);                 // Wait before scrolling
+  secureLCD.begin();
+  Serial.begin(9600);
 }
 
 void loop() {
-  // Scroll the display to the right 16 times
-  for (int i = 0; i < 16; i++) {
-    lcd.scrollDisplayRight();  // Move text right
-    delay(300);                // Delay for animation effect
-  }
+  if (Serial.available()) 
+  {
+    char ch = Serial.read();
 
-  // Optional: scroll it back left
-  // for (int i = 0; i < 16; i++) {
-  //   lcd.scrollDisplayLeft();   // Move text left
-  //   delay(300);
-  // }
+    if (ch == '\n' || ch == '\r') 
+    {
+      if (secureLCD.checkPIN(correctPIN)) 
+      {
+        secureLCD.showAccessGranted();
+        delay(3000);
+        attempts = 0;
+      } 
+      
+      else 
+      {
+        attempts++;
+        secureLCD.showAccessDenied();
+        delay(2000);
+        if (attempts >= 3) 
+        {
+          secureLCD.begin();
+          secureLCD.showAccessDenied();
+          delay(3000);
+          while (true); // locked out
+        }
+      }
+      secureLCD.clearInput();
+      secureLCD.promptPIN();
+    }
+    else if (ch == '\b') 
+      secureLCD.backspace();
+  
+    else if (isdigit(ch)) 
+      secureLCD.inputDigit(ch);
+    
+  }
 }
