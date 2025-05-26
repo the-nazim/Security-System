@@ -1,5 +1,6 @@
-/home/nazim/projects/arduino/build/sketch/arduino.ino.cpp.o: \
- /home/nazim/projects/arduino/build/sketch/arduino.ino.cpp \
+/home/nazim/projects/arduino/build/libraries/Keypad/Key.cpp.o: \
+ /home/nazim/snap/arduino-cli/60/Arduino/libraries/Keypad/src/Key.cpp \
+ /home/nazim/snap/arduino-cli/60/Arduino/libraries/Keypad/src/Key.h \
  /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/Arduino.h \
  /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/binary.h \
  /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/WCharacter.h \
@@ -10,8 +11,4 @@
  /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/Printable.h \
  /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/USBAPI.h \
  /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/Arduino.h \
- /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/variants/standard/pins_arduino.h \
- /home/nazim/snap/arduino-cli/60/Arduino/libraries/Keypad/src/Keypad.h \
- /home/nazim/snap/arduino-cli/60/Arduino/libraries/Keypad/src/Key.h \
- /home/nazim/snap/arduino-cli/60/Arduino/libraries/LiquidCrystal/src/LiquidCrystal.h \
- /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino/Print.h
+ /home/nazim/snap/arduino-cli/60/.arduino15/packages/arduino/hardware/avr/1.8.6/variants/standard/pins_arduino.h

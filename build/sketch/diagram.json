@@ -5,7 +5,7 @@
   "editor": "wokwi",
   "parts": [
     { "type": "wokwi-arduino-uno", "id": "uno", "top": 96.6, "left": -67.8, "attrs": {} },
-    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -130.97, "left": -41.6, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -178.97, "left": -41.6, "attrs": {} },
     {
       "type": "wokwi-resistor",
       "id": "r1",
@@ -13,7 +13,8 @@
       "left": 249.05,
       "rotate": 90,
       "attrs": { "value": "220000" }
-    }
+    },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -462.8, "left": 332, "attrs": {} }
   ],
   "connections": [
     [ "lcd1:VSS", "uno:GND.1", "green", [ "v0" ] ],
@@ -28,7 +29,15 @@
     [ "lcd1:D7", "uno:2", "green", [ "v0" ] ],
     [ "lcd1:K", "uno:GND.3", "green", [ "v0" ] ],
     [ "lcd1:A", "r1:1", "green", [ "v0" ] ],
-    [ "r1:2", "uno:5V", "green", [ "h0" ] ]
+    [ "r1:2", "uno:5V", "green", [ "h0" ] ],
+    [ "keypad1:R1", "uno:6", "green", [ "v0" ] ],
+    [ "keypad1:R2", "uno:7", "green", [ "v0" ] ],
+    [ "keypad1:R3", "uno:8", "green", [ "v0" ] ],
+    [ "keypad1:R4", "uno:9", "green", [ "v0" ] ],
+    [ "keypad1:C1", "uno:10", "green", [ "v0" ] ],
+    [ "keypad1:C2", "uno:13", "green", [ "v0" ] ],
+    [ "keypad1:C3", "uno:A0", "green", [ "v0" ] ],
+    [ "keypad1:C4", "uno:A1", "green", [ "v0" ] ]
   ],
   "dependencies": {}
 }
