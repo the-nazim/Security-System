@@ -1,18 +1,29 @@
 #include "security.h"
 
 
-SecureLCD::SecureLCD(uint8_t rs, uint8_t en, uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7)
+LCDWrapper::LCDWrapper(uint8_t rs, uint8_t en, uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7)
   : lcd(rs, en, d4, d5, d6, d7), index(0) {
-  input[0] = '\0';
+    input[0] = '\0';
+}
+  
+KeypadWrapper::KeypadWrapper(const byte rowPins[4], const byte colPins[4], const char keymap[4][4]) {
+  memcpy(rows, rowPins, sizeof(rows));
+  memcpy(cols, colPins, sizeof(cols));
+  memcpy(keys, keymap, sizeof(keys));
+
 }
 
-void SecureLCD::begin()
+char KeypadWrapper::getKey() {
+  return keypad->getKey();
+}
+
+void LCDWrapper::begin()
 {
   lcd.begin(16, 2);
   promptPIN();
 }
 
-void SecureLCD::promptPIN() 
+void LCDWrapper::promptPIN() 
 {
   lcd.clear();
   lcd.setCursor(0, 0);
@@ -20,7 +31,7 @@ void SecureLCD::promptPIN()
   lcd.setCursor(0, 1);
 }
 
-void SecureLCD::inputDigit(char digit) 
+void LCDWrapper::inputDigit(char digit) 
 {
   if (index < 4) {
     input[index++] = digit;
@@ -29,7 +40,7 @@ void SecureLCD::inputDigit(char digit)
   }
 }
 
-void SecureLCD::backspace() 
+void LCDWrapper::backspace() 
 {
   if (index > 0) {
     index--;
@@ -40,7 +51,7 @@ void SecureLCD::backspace()
   }
 }
 
-void SecureLCD::clearInput() 
+void LCDWrapper::clearInput() 
 {
   index = 0;
   input[0] = '\0';
@@ -49,21 +60,22 @@ void SecureLCD::clearInput()
   lcd.setCursor(0, 1);
 }
 
-void SecureLCD::showAccessGranted() 
+void LCDWrapper::showAccessGranted() 
 {
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Access Granted");
 }
 
-void SecureLCD::showAccessDenied() 
+void LCDWrapper::showAccessDenied() 
 {
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Access Denied");
 }
 
-bool SecureLCD::checkPIN(const char* correctPIN) 
+bool LCDWrapper::checkPIN(const char* correctPIN) 
 {
   return strcmp(input, correctPIN) == 0;
 }
+
