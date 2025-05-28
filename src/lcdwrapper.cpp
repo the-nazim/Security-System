@@ -1,21 +1,10 @@
-#include "security.h"
+#include "LandKWrapper.h"
 
 
 LCDWrapper::LCDWrapper(uint8_t rs, uint8_t en, uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7)
   : lcd(rs, en, d4, d5, d6, d7), index(0) {
     input[0] = '\0';
-}
-  
-KeypadWrapper::KeypadWrapper(const byte rowPins[4], const byte colPins[4], const char keymap[4][4]) {
-  memcpy(rows, rowPins, sizeof(rows));
-  memcpy(cols, colPins, sizeof(cols));
-  memcpy(keys, keymap, sizeof(keys));
-
-}
-
-char KeypadWrapper::getKey() {
-  return keypad->getKey();
-}
+}  
 
 void LCDWrapper::begin()
 {
@@ -33,7 +22,7 @@ void LCDWrapper::promptPIN()
 
 void LCDWrapper::inputDigit(char digit) 
 {
-  if (index < 4) {
+  if (index < 4) {  
     input[index++] = digit;
     input[index] = '\0';
     lcd.print('*');
