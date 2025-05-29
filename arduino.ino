@@ -16,9 +16,12 @@ LCDWrapper lcd(12, 11, 5, 4, 3, 2);
 
 int attempts = 0;
 
-void setup() {
+void setup() 
+{
   lcd.begin();
   lcd.promptPIN();
+  pinMode(1, OUTPUT); // LED pin for access granted indication
+  digitalWrite(1, LOW); // Ensure LED is off initially
 }
 
 void loop()
@@ -30,6 +33,7 @@ void loop()
     if(lcd.checkPIN(correctPIN))
     {
       lcd.showAccessGranted();
+      digitalWrite(1, HIGH); // Turn on LED for access granted
       delay(2000);
     }
     else
