@@ -25,7 +25,20 @@ void loop()
 {
   char key = keypad.getKey();
 
-  if (isdigit(key))
+  if(key=='#')
+  {
+    if(lcd.checkPIN(correctPIN))
+    {
+      lcd.showAccessGranted();
+      delay(2000);
+    }
+    else
+    {
+      lcd.showAccessDenied();
+      delay(2000);
+    }
+  }
+  else if (isdigit(key))
   {
     lcd.inputDigit(key);
   }
