@@ -26,7 +26,7 @@ void loop();
 void setup() 
 {
   lcd.begin();
-  lcd.promptPIN();
+  lcd.promptMessage("PIN please:");
   pinMode(1, OUTPUT); // LED pin for access granted indication
   digitalWrite(1, LOW); // Ensure LED is off initially
 }

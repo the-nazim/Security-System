@@ -10,14 +10,17 @@ LCDWrapper::LCDWrapper(uint8_t rs, uint8_t en, uint8_t d4, uint8_t d5, uint8_t d
 void LCDWrapper::begin()
 {
   lcd.begin(16, 2);
-  promptPIN();
+  // promptMessage(char *message);
 }
 
-void LCDWrapper::promptPIN() 
+void LCDWrapper::promptMessage(char *message) 
 {
+  if (message == nullptr)
+    message = "Hello World!!!";
+  
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("Enter PIN:");
+  lcd.print(message);
   lcd.setCursor(0, 1);
 }
 

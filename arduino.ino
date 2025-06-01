@@ -19,7 +19,7 @@ int attempts = 0;
 void setup() 
 {
   lcd.begin();
-  lcd.promptPIN();
+  lcd.promptMessage("Enter PIN:");
   pinMode(1, OUTPUT); // LED pin for access granted indication
   digitalWrite(1, LOW); // Ensure LED is off initially
 }
